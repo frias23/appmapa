@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular Maps</title>
+    <!--conección de AngularJS Framework-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.min.js"></script>
+    <script src="ng-csv-0.3.6/build/ng-csv.js"></script>
+      
+      
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"><!--Importando fuente Oswald desde Google Fonts-->
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <!--estilos de bootstrap-->
+
+        <link rel="stylesheet" href="css/style.css"> 
+        <!-- estilo desde archivo -->       
+    
+    
+  </head>
+
+  <body>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js"></script>
+    <!--Se importa la API de GoogleMaps de JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <!--Se importa el framework de AngularJS-->
+      
+<div ng-app="mapsApp" ng-controller="MapCtrl">
+  <div class="container">
+      
+      
+      <h1 id="titulo">Mapa interactivo</h1>
+     
+      
+      
+   <!-- <pre> {{cities | json}}</pre> -->
+    <div class="row">
+      <div class="col-sm-12">
+        <label for="city">Nombre</label>
+          <!--ingreso del nombre-->
+        <input type="text" placeholder="describe el nombre.."class="form-control" ng-model="city" />
+        <label  for="desc">Descripción</label>
+          <!--ingreos de la descripcion -->
+        <input type="text" placeholder="describe la ubicacion.." class="form-control" ng-model="desc" />
+        <label  for="lat">Latitud</label>
+          <!--Latitud-->
+        <input type="text" placeholder="anota la latitud.." class="form-control" ng-model="lat" />
+        <label  for="long">Longitud</label>
+          <!--Longitud-->
+        <input type="text" placeholder="anota la longitud.." class="form-control" ng-model="long" />
+        <br>
+           <!--Botón de agregarDireccion-->
+        <button class="pull-right btn btn-success" ng-click="agregarDireccion()">Nueva Dirección</button>
+      </div>
+    </div>
+    <br / >  
+    <!--contenido del mapa-->
+    <div id="map"></div> 
+    <br / >
+     
+      
+     
+     
+       <!--botón para descargar en .txt-->
+      <a class="pull-center btn btn-success" ng-click="saveJSON()" ng-href="{{ url }}">descargar archivo .txt</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+       <!--Pie de la página con mis datos-->
+      <div class="footer">
+     <p>alumnos: luis andres lopez frias, roberto alvaro vazquez, jose antonio perez sanchez
+    </p>
+    <br>
+  </div>
+    
+</div>
+    
+         
+    
+      </div>
+      <!--Se importa el archivo JavaScript mediante un script-->
+        <script src="js/index.js"></script>
+      
+      
+    
+    
+  </body>
+</html>
